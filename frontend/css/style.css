@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    font-size: 16px;  /* define o tamanho da fonte padrao do navegador, ou seja, seja qual foi o navegador que acessar, sua fonte tera como padrao 16px */
+}
+
+body {
+    background: url("../images/background.png");
+    color: #f2f2f2;
+}
+
+.login {
+    width: 100%;
+    max-width: 330px;
+    background-color: #212121;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.login > h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 100dvh;  /* o dvh se adapta aos navegadores, com isso vc define para ser do tamanho da area visivel na tela, no caso como ta 100, ocupar 100% da aerea visivel da tela */
+    display: flex;  /*centraliza tudo */
+    align-items: center;
+    justify-content: center;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;  /* deixa em formato de coluna, um em baixo do outro */
+    gap: 15px;  /* separa os elemntos, no caso uma distancia de 15px */
+}
+
+.login__input {
+    border: none;
+    padding: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;  /* seria basicamente o "negrito" da fonte */
+    background-color: #121212;
+    color: #f2f2f2;
+    outline: none;  /* tira a borda colorida padrao que o navegador coloca ao clicar no input */
+    border-radius: 5px;
+}
+
+.login__input:focus {  /* esse focus significa que é quando vc clica, ou seja, essas configs serao aplicadas ao clicar no input */
+    outline: 2px solid #f2f2f2;
+}
+
+.login__button {
+    border: none;
+    padding: 15px;
+    border-radius: 5px;  /* deixa a borda arredondada */
+    font-size: 0.85rem;
+    font-weight: 700;
+    background-color: #ddd;
+    cursor: pointer;
+    color: #121212;
+}
+
+.login__button:hover {  /* o hover 'e quando vc coloca o mouse em cima, ou seja, quando vc colocar o mouse em cima do botao, ele vai executar este bloco */
+    background-color: #fff;
+}
+
+.chat {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat__messages {
+    flex-grow: 1;  /* faz a section da messagem ocupar todo o espaço disponivel, independente do tamanho disponibilizado para os outros elementos */
+    padding: 30px 30px 90px;
+    display: flex;  /* fica um elemento do lado do outro */
+    flex-direction: column;
+    justify-content: flex-end; /* para as menssagens ficarem no final do container */
+
+}
+
+.chat__form {
+    background-color: #191919;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;  /* pois ao rolar a tela, o form de escrever menssagens nao ira rolar com a tela, ficara fixo */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chat__input {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 0.975;
+    background-color: #212121;
+    outline: none;
+    color: #f2f2f2;
+    font-size: 1rem;
+}
+
+.chat__button {
+    border: none;
+    background: none;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.chat__button > span {  /* o span no caso é o icone que pegamos do google font que esta dentro do button */
+    font-size: 1.8rem;
+}
+
+.chat__messages > div {
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 22px;  /* distancia entre uma linha de texto e a outra, dentro da mesma menssagem */
+}
+
+.message--self {
+    background-color: #f2f2f2;
+    color: #121212;
+    border-radius: 10px 10px 0 10px;
+    align-self: flex-end;  /* para ajustar as menssagens ao lado direito */
+}
+
+.message--other {
+    background-color: #333;
+    color: #f2f2f2;
+    border-radius: 0 10px 10px 10px;
+    align-self: flex-start;  /* para ajustar as menssagens ao lado esquerdo */
+}
+
+.message--sender {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: cadetblue;
+}
