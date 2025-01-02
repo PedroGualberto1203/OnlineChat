@@ -81,7 +81,7 @@ const handleLogin = (event) => {
     user.name = loginInput.value;  // O valor de name do user, sera o valor inserido no input
     login.style.display = "none";  //Mudando o display para none, pois assim ao dar o submit, a tela de login ira sumir
     chat.style.display = "flex"; //para apos sumir o login aparecer o chat(com o display flex, que 'e como ele deve ser)
-    websocket = new WebSocket("ws://localhost:8080")  //fiz a conexao com o back, colocando ai dentro a porta estabelecida anteriormente de conexao, no caso 8080
+    websocket = new WebSocket("wss://onlinechat-backend-rsoo.onrender.com")  //fiz a conexao com o back, colocando ai dentro a porta estabelecida anteriormente de conexao, no caso 8080
     websocket.onmessage = processMessage // O websocket.onmessage é para quando o servidor nos manda uma menssagem, ou seja, quando ele nos mandar uma mensagem, faça tal coisa
 }
 
